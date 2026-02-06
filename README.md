@@ -8,10 +8,12 @@
 
 # Screenshots
 
-<img src="TrainSimulatorWPF/Screenshots/cpt1.png" width="400" alt="Screenshot 1">
-<img src="TrainSimulatorWPF/Screenshots/cpt2.png" width="400" alt="Screenshot 2">
-<img src="TrainSimulatorWPF/Screenshots/cpt3.png" width="400" alt="Screenshot 3">
-<img src="TrainSimulatorWPF/Screenshots/cpt4.png" width="400" alt="Screenshot 4">
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+  <img src="TrainSimulatorWPF/Screenshots/cpt1.png" alt="Screenshot 1" style="width: 100%;">
+  <img src="TrainSimulatorWPF/Screenshots/cpt2.png" alt="Screenshot 2" style="width: 100%;">
+  <img src="TrainSimulatorWPF/Screenshots/cpt3.png" alt="Screenshot 3" style="width: 100%;">
+  <img src="TrainSimulatorWPF/Screenshots/cpt4.png" alt="Screenshot 4" style="width: 100%;">
+</div>
 
 ## Overview
 
@@ -29,7 +31,7 @@ A desktop train simulator featuring realistic physics modeling, authentic startu
 
 ```bash
 # Clone the repository
-git clone https://github.com/YourUsername/TrainSimulatorWPF.git
+git clone https://github.com/jonaffrye/TrainSimulatorWPF.git
 cd TrainSimulatorWPF
 
 # Open TrainSimulator.sln in Visual Studio
