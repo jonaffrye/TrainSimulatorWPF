@@ -57,7 +57,6 @@ $a = \frac{F_{net}}{mass}$
 
 $x(t+\Delta t) = x(t) + v \cdot \Delta t$
 
-(where $\Delta t = 50ms$)
 
 - **Physics engine**: Real-time velocity/position calculations using Davis resistance equation
 - **Train models**: Different train types (IC, P, L, S) with unique characteristics
