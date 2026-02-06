@@ -1,6 +1,6 @@
 # Custom License
 
-Copyright (c) 2026 [Votre Nom]
+Copyright (c) 2026 Affrye K. Jonathan
 
 ## Permissions
 
@@ -21,4 +21,4 @@ Copyright (c) 2026 [Votre Nom]
 ## Collaboration
 
 For collaboration opportunities or special permissions:
-📧 Contact: your.email@example.com
+📧 Contact: jon.affrye@gmail.com
