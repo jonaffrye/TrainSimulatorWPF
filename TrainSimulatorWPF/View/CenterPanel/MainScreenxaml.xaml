@@ -1,0 +1,170 @@
+﻿<UserControl x:Class="TrainSimulatorWPF.View.CenterPanel.MainScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TrainSimulatorWPF.View.CenterPanel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Viewbox Stretch="Uniform">
+        <Grid Width="500" Height="320">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+
+            <!-- sides -->
+            <Rectangle x:Name="Rect_TopLeft" Grid.Column="0" Grid.Row="0" Fill="black"/>
+            <Rectangle x:Name="Rect_TopCenter" Grid.Column="1" Grid.Row="0" Fill="black"/>
+            <Rectangle x:Name="Rect_TopRight" Grid.Column="3" Grid.Row="0" Fill="#FF676767"/>
+            <Rectangle x:Name="Rect_MidRight" Grid.Column="2" Grid.Row="0" Fill="black"/>
+            <Rectangle x:Name="Rect_RightMiddle" Grid.Column="2" Grid.Row="1" Fill="black"/>
+            <Rectangle x:Name="Rect_BottomLeft" Grid.Column="0" Grid.Row="2" Fill="black"/>
+            <Rectangle x:Name="Rect_BottomCenter" Grid.Column="1" Grid.Row="2" Fill="black"/>
+            <Rectangle x:Name="Rect_BottomRight" Grid.Column="2" Grid.Row="2" Fill="black"/>
+            <Rectangle x:Name="Rect_BottomRight2" Grid.Column="2" Grid.Row="3" Fill="#FF676767"/>
+            <Rectangle x:Name="Rect_RightExtra" Grid.Column="3" Grid.Row="2" Fill="#FF676767"/>
+            <Rectangle x:Name="Rect_LeftMiddle" Grid.Column="0" Grid.Row="1" Fill="black"/>
+            <Rectangle x:Name="Rect_RightMiddle2" Grid.Column="3" Grid.Row="1" Fill="#FF676767"/>
+            <Rectangle x:Name="Rect_BottomLeft2" Grid.Column="0" Grid.Row="3" Fill="#FF676767"/>
+            <Rectangle x:Name="Rect_BottomCenter2" Grid.Column="1" Grid.Row="3" Fill="#FF676767"/>
+            <Rectangle x:Name="Rect_BottomRight3" Grid.Column="3" Grid.Row="3" Fill="#FF676767"/>
+
+            <!-- central screen with speed dial -->
+            <Rectangle x:Name="Rect_Screen" Grid.Column="1" Grid.Row="1" Fill="#FF030F20"/>
+
+            <!-- main content of the screen -->
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition />
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Menu" x:Name="MenuTB" Foreground="#FFD0D0D0" HorizontalAlignment="center" VerticalAlignment="Center"/>
+
+                <!--question-->
+                <TextBlock Grid.Row="1" Name="QuestionTB"
+                           Text="Question" 
+                           Foreground="#FF746F6F" 
+                           HorizontalAlignment="center" 
+                           VerticalAlignment="Center"/>
+
+                <!-- list -->
+                <Grid Grid.Row="2" >
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*"/>
+                        <ColumnDefinition Width="50*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    
+                    <ListBox x:Name="ListLB" Grid.Column="0"
+                         ItemsSource="{Binding ItemsList}"
+                         SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                         FontSize="8"
+                         Background="#FF030F20"
+                         Margin="10"
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                         ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <!-- default style -->
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="Transparent"/>
+                                <!-- style when selected -->
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Foreground" Value="Green"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                    </ListBox>
+
+
+                    <TextBlock Grid.Column="1" 
+                           Text="Choix de l'utilisateur" 
+                           x:Name="DisplayChoiceTB"
+                           Foreground="#FF746F6F" 
+                           FontSize="10"
+                           HorizontalAlignment="center" 
+                           VerticalAlignment="Center" 
+                           Margin="0,0,0,5"/>
+                </Grid>
+
+                <!--question-->
+                <TextBlock Grid.Row="3" 
+                           Text="Appuyez sur le bouton Entrer pour confirmer ou Stop pour annuler." 
+                           Foreground="#FF746F6F" 
+                           FontSize="10"
+                           HorizontalAlignment="center" 
+                           VerticalAlignment="Center" 
+                           Margin="0,0,0,5"/>
+
+                
+                
+            </Grid>
+
+            
+            <!-- right-side buttons -->
+            <Grid x:Name="Grid_RightButtons" Grid.Row="1" Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="17*"/>
+                    <RowDefinition Height="17*"/>
+                    <RowDefinition Height="17*"/>
+                    <RowDefinition Height="17*"/>
+                    <RowDefinition Height="17*"/>
+                    <RowDefinition Height="17*"/>
+                </Grid.RowDefinitions>
+
+                <Rectangle x:Name="Rect_RightBtn0" Grid.Row="0" Margin="3" Fill="#FF3C3C3C" RadiusX="3" RadiusY="3" Stroke="#FFF7F7F7" StrokeThickness="2"/>
+                <Rectangle x:Name="Rect_RightBtn1" Grid.Row="1" Margin="3" Fill="#FF3C3C3C" RadiusX="3" RadiusY="3" Stroke="#FFF7F7F7" StrokeThickness="2"/>
+                <Rectangle x:Name="Rect_RightBtn2" Grid.Row="2" Margin="3" Fill="#FF3C3C3C" RadiusX="3" RadiusY="3" Stroke="#FFF7F7F7" StrokeThickness="2"/>
+                <Rectangle x:Name="Rect_RightBtn3" Grid.Row="3" Margin="3" Fill="#FF3C3C3C" RadiusX="3" RadiusY="3" Stroke="#FFF7F7F7" StrokeThickness="2"/>
+                <Rectangle x:Name="Rect_RightBtn4" Grid.Row="4" Margin="3" Fill="#FF3C3C3C" RadiusX="3" RadiusY="3" Stroke="#FFF7F7F7" StrokeThickness="2"/>
+                <Rectangle x:Name="Rect_RightBtn5" Grid.Row="5" Margin="3" Fill="#FF3C3C3C" RadiusX="3" RadiusY="3" Stroke="#FFF7F7F7" StrokeThickness="2"/>
+            </Grid>
+
+            <!-- bottom buttons -->
+            <Grid x:Name="Grid_BottomButtons" Grid.Row="3" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Rectangle x:Name="Rect_BottomBtn0" Grid.Column="0" Margin="2" Fill="#FF3C3C3C" RadiusX="3" RadiusY="3" Stroke="#FFF7F7F7" StrokeThickness="2"/>
+                <Rectangle x:Name="Rect_BottomBtn1" Grid.Column="1" Margin="2" Fill="#FF3C3C3C" RadiusX="3" RadiusY="3" Stroke="#FFF7F7F7" StrokeThickness="2"/>
+                <Rectangle x:Name="Rect_BottomBtn2" Grid.Column="2" Margin="2" Fill="#FF3C3C3C" RadiusX="3" RadiusY="3" Stroke="#FFF7F7F7" StrokeThickness="2"/>
+                <Rectangle x:Name="Rect_BottomBtn3" Grid.Column="3" Margin="2" Fill="#FF3C3C3C" RadiusX="3" RadiusY="3" Stroke="#FFF7F7F7" StrokeThickness="2"/>
+                <Rectangle x:Name="Rect_BottomBtn4" Grid.Column="4" Margin="2" Fill="#FF3C3C3C" RadiusX="3" RadiusY="3" Stroke="#FFF7F7F7" StrokeThickness="2"/>
+                <Rectangle x:Name="Rect_BottomBtn5" Grid.Column="5" Margin="2" Fill="#FF3C3C3C" RadiusX="3" RadiusY="3" Stroke="#FFF7F7F7" StrokeThickness="2"/>
+                <Rectangle x:Name="Rect_BottomBtn6" Grid.Column="6" Margin="2" Fill="#FF3C3C3C" RadiusX="3" RadiusY="3" Stroke="#FFF7F7F7" StrokeThickness="2"/>
+                <Rectangle x:Name="Rect_BottomBtn7" Grid.Column="7" Margin="2" Fill="#FF3C3C3C" RadiusX="3" RadiusY="3" Stroke="#FFF7F7F7" StrokeThickness="2"/>
+                <Rectangle x:Name="Rect_BottomBtn8" Grid.Column="8" Margin="2" Fill="#FF3C3C3C" RadiusX="3" RadiusY="3" Stroke="#FFF7F7F7" StrokeThickness="2"/>
+                <Rectangle x:Name="Rect_BottomBtn9" Grid.Column="9" Margin="2" Fill="#FF3C3C3C" RadiusX="3" RadiusY="3" Stroke="#FFF7F7F7" StrokeThickness="2"/>
+            </Grid>
+
+        </Grid>
+    </Viewbox>
+</UserControl>

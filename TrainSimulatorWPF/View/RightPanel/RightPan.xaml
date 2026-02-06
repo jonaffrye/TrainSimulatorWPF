@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="TrainSimulatorWPF.View.RightPanel.RightPan"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TrainSimulatorWPF.View.RightPanel"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="150">
+
+    <!-- ViewBox to preserve aspect ratio -->
+    <Viewbox Stretch="Uniform">
+        <!-- Reference dimensions -->
+        <Grid Width="150" Height="300">
+            <!-- Vertical slider (cockpit style) -->
+            <Slider x:Name="SliderControl"
+                    Orientation="Vertical"
+                    Minimum="-3"
+                    Maximum="3"
+                    Value="0"
+                    TickPlacement="Both"
+                    TickFrequency="1"
+                    IsSnapToTickEnabled="True"
+                    ValueChanged="SliderControl_ValueChanged">
+
+                <Slider.Template>
+                    <ControlTemplate TargetType="Slider">
+                        <Grid Margin="10">
+                            <!-- Rail -->
+                            <Rectangle Width="65" Height="300" Fill="#FF3C3C3C" StrokeThickness="2"
+                                       VerticalAlignment="Stretch" HorizontalAlignment="Center"
+                                       RadiusX="4" RadiusY="4"/>
+
+                                <!-- Track -->
+                            <Track x:Name="PART_Track"
+                                   VerticalAlignment="Stretch"
+                                   IsDirectionReversed="True">
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton Command="Slider.DecreaseLarge" Visibility="Collapsed"/>
+                                </Track.DecreaseRepeatButton>
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton Command="Slider.IncreaseLarge" Visibility="Collapsed"/>
+                                </Track.IncreaseRepeatButton>
+
+                                <!-- Thumb = sliding button -->
+                                <Track.Thumb>
+                                    <Thumb Width="110" Height="60">
+                                        <Thumb.Template>
+                                            <ControlTemplate TargetType="Thumb">
+                                                <Border CornerRadius="5"
+                                                        Background="#FF131313"
+                                                        BorderBrush="#FF868686"
+                                                        BorderThickness="4"/>
+                                            </ControlTemplate>
+                                        </Thumb.Template>
+                                    </Thumb>
+                                </Track.Thumb>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Slider.Template>
+            </Slider>
+        </Grid>
+    </Viewbox>
+</UserControl>

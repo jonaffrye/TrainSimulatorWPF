@@ -1,0 +1,155 @@
+﻿<UserControl x:Class="TrainSimulatorWPF.View.LeftPanel.LeftPan"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="492" d:DesignWidth="82">
+
+    <Grid Margin="0,10,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="17*"/>
+        </Grid.RowDefinitions>
+
+        <!-- bouton UP -->
+        <Viewbox Grid.Row="0" Margin="5" Stretch="Uniform">
+            <Button Name="UpBtn" Click="UpBtn_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="border"
+                                    CornerRadius="100"
+                                    Background="White"
+                                    BorderBrush="#FFA0A0A0"
+                                    BorderThickness="15"
+                                    Width="100" Height="100">
+                                <Border.RenderTransform>
+                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                </Border.RenderTransform>
+                            </Border>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="LightGray"/>
+                                <Setter TargetName="border" Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+                <TextBlock Text="UP" FontWeight="Bold" FontSize="26" Foreground="Black"/>
+            </Button>
+        </Viewbox>
+
+        <!-- bouton Dwn -->
+        <Viewbox Grid.Row="1" Margin="5" Stretch="Uniform">
+            <Button Name="DwnBtn" Click="DwnBtn_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="border"
+                                    CornerRadius="100"
+                                    Background="White"
+                                    BorderBrush="#FFA0A0A0"
+                                    BorderThickness="15"
+                                    Width="100" Height="100">
+                                <Border.RenderTransform>
+                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                </Border.RenderTransform>
+                            </Border>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="LightGray"/>
+                                <Setter TargetName="border" Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+                <TextBlock Text="Dwn" FontWeight="Bold" FontSize="25" Foreground="Black"/>
+            </Button>
+        </Viewbox>
+
+        <!-- bouton Enter -->
+        <Viewbox Grid.Row="3" Margin="5" Stretch="Uniform">
+            <Button Name="EnterBtn" Click="EnterBtn_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="border"
+                                    CornerRadius="100"
+                                    Background="White"
+                                    BorderBrush="#FFA0A0A0"
+                                    BorderThickness="15"
+                                    Width="100" Height="100">
+                                <Border.RenderTransform>
+                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                </Border.RenderTransform>
+                            </Border>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="LightGray"/>
+                                <Setter TargetName="border" Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+                <TextBlock Text="Enter" FontWeight="Bold" FontSize="24" Foreground="Black"/>
+            </Button>
+        </Viewbox>
+
+        <!-- bouton Stop -->
+        <Viewbox Grid.Row="5" Margin="5" Stretch="Uniform">
+            <Button Name="StopBtn" Click="StopBtn_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="border"
+                                    CornerRadius="100"
+                                    Background="DarkRed"
+                                    BorderBrush="#FFA0A0A0"
+                                    BorderThickness="15"
+                                    Width="100" Height="100">
+                                <Border.RenderTransform>
+                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                </Border.RenderTransform>
+                            </Border>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="Red"/>
+                                <Setter TargetName="border" Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+                <TextBlock Text="Stop" FontWeight="Bold" FontSize="24" Foreground="White"/>
+            </Button>
+        </Viewbox>
+    </Grid>
+</UserControl>

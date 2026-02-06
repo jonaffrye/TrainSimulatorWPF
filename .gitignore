@@ -1,0 +1,25 @@
+# Visual Studio cache/options
+.vs/
+.vscode/
+
+# Build results
+bin/
+obj/
+*.user
+*.suo
+*.sln.docstates
+
+# NuGet
+*.nupkg
+.nuget/
+
+# Build logs
+*.log
+
+# Rider
+.idea/
+*.sln.iml
+
+# OS files
+.DS_Store
+Thumbs.db
