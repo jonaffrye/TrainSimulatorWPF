@@ -8,10 +8,16 @@
 
 # Screenshots
 
-|                                                                                   |                                                                                   |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| <img src="TrainSimulatorWPF/Screenshots/cpt1.png" width="300" alt="Screenshot 1"> | <img src="TrainSimulatorWPF/Screenshots/cpt2.png" width="300" alt="Screenshot 2"> |
-| <img src="TrainSimulatorWPF/Screenshots/cpt3.png" width="300" alt="Screenshot 3"> | <img src="TrainSimulatorWPF/Screenshots/cpt4.png" width="300" alt="Screenshot 4"> |
+<table>
+  <tr>
+    <td><img src="TrainSimulatorWPF/Screenshots/cpt1.png" width="300" alt="Screenshot 1"> </td>
+    <td><img src="TrainSimulatorWPF/Screenshots/cpt2.png" width="300" alt="Screenshot 2"></td>
+  </tr>
+  <tr>
+    <td><img src="TrainSimulatorWPF/Screenshots/cpt3.png" width="300" alt="Screenshot 3"> </td>
+    <td><img src="TrainSimulatorWPF/Screenshots/cpt4.png" width="300" alt="Screenshot 4"></td>
+  </tr>
+</table>
 
 ## Overview
 
