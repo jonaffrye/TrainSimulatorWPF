@@ -101,7 +101,7 @@ Contributions welcome! Fork the repo, create a feature branch, and submit a PR.
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details.
+MIT License - see [LICENSE.md](LICENSE.md) for details.
 
 Educational use encouraged.
 
